@@ -82,3 +82,39 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.35 });
 
 document.querySelectorAll(".avatar, .circle, .title-cover, .bio, .hero-image, .hero-text").forEach((el) => observer.observe(el));
+
+
+const langButtons = document.querySelectorAll('.lang-switch button');
+const bioTexts = document.querySelectorAll('.bio-text');
+
+function setLanguage(lang) {
+    bioTexts.forEach(text => {
+        if (text.dataset.lang === lang) {
+            text.style.display = 'block';
+
+            requestAnimationFrame(() => {
+                text.classList.add('active');
+            });
+        } else {
+            text.classList.remove('active');
+
+            setTimeout(() => {
+                text.style.display = 'none';
+            }, 500);
+        }
+    });
+
+    localStorage.setItem('lang', lang);
+}
+
+
+langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        setLanguage(btn.dataset.lang);
+    });
+});
+
+// язык по умолчанию
+const savedLang = localStorage.getItem('lang') || 'en';
+setLanguage(savedLang);
+
