@@ -255,3 +255,41 @@ a.circle:hover,
     opacity: 0.9;
 }
 
+.bio-text {
+    display: none;
+}
+
+.bio-text.active {
+    display: block;
+}
+
+.lang-switch {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.lang-switch button {
+    background: transparent;
+    border: 1px solid rgba(160,140,255,.5);
+    color: #d6dbff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.bio-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 
+        opacity 0.5s ease,
+        transform 0.5s ease;
+    display: none;
+}
+
+.bio-text.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
