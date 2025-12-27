@@ -1,8 +1,28 @@
-* {
+* 
+.screen {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 80px 20px;
+    box-sizing: border-box;
+}
+
+.hero {
+    padding-top: 120px;
+}
+
+.screen .content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 body {
     font-family: Impact, sans-serif;
@@ -17,19 +37,16 @@ canvas#bg {
     z-index: -1;
 }
 
-.screen {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
+
 
 .content {
     display: flex;
-    gap: 40px;
+    flex-direction: column; /* ← ВАЖНО */
     align-items: center;
+    text-align: center;
+    gap: 20px;
 }
+
 
 .bio {
     max-width: 420px;
@@ -209,5 +226,32 @@ a.circle:hover,
         0 0 80px rgba(180, 160, 255, 0.55),
         inset 0 0 30px rgba(255, 255, 255, 0.12);
     filter: brightness(1.08);
+}
+
+
+
+.about-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: textFadeIn 0.8s ease forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes textFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bio h2 {
+    margin-top: 30px;
+    color: #c77dff;
+}
+
+.bio p {
+    max-width: 700px;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
