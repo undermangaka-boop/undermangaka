@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,68827,t=>{"use strict";var o=t.i(55992);t.s(["default",0,function(){return(0,o.useEffect)(()=>{window.location.replace(`${window.location.pathname.replace(/\/contact\/?$/,"/follow")}#contact`)},[]),null}])}]);
